@@ -20,7 +20,7 @@ be considered complete.
 `import { autofurigana } from './autofurigana'` or something will bring the
 `autofurigana` function into the local namespace. The function itself returns
 and array of kanji-kana pairs; if the currently analyzed block of the kanji
-sentence has kana in it, the kanji slot of the pair is mapped to `null`.
+sentence has kana in it, the kana slot of the pair is set to `null`.
 
 The first argument to the function is the sentence containing kanji, and the
 second is the same sentence with only kana. An example feat. Murakami:
