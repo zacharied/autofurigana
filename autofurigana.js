@@ -41,12 +41,7 @@ const autofurigana = (kanji, reading) => {
       // We are done.
       break;
     } else if (is_kanji(kanji[kp]) && !is_kanji(kanji[kp+1])) {
-      console.log("Boundary type: kanji-nonkanji");
-      console.log("\tThis kanji   : " + kanji[kp]);
-      console.log("\tNext nonkanji: " + kanji[kp+1]);
-
       // We need to "catch up" reading to kanji.
-      console.log("\tCurrent rp: " + reading[rp]);
       while (kanji[kp+1] !== reading[rp]) {
         if (reading[rp] === undefined) {
           // We reached the end of the string without finding a match.
@@ -58,10 +53,6 @@ const autofurigana = (kanji, reading) => {
 
       build_push();
     } else if (!is_kanji(kanji[kp]) && is_kanji(kanji[kp+1])) {
-      console.log("Boundary type: nonkanji-kanji");
-      console.log("\tThis nonkanji: " + kanji[kp]);
-      console.log("\tNext kanji   : " + kanji[kp+1]);
-
       read_build = null;
       rp += kanji_build.length;
       build_push(); 
