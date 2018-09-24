@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+temp=$(mktemp -dp . "_test.XXXXX")
+
+cd "$temp"
+cp ../*.js .
+rename '.js' '.mjs' *
+
+node --experimental-modules 'test.mjs'
+
+cd ..
+rm -rf "$temp"
