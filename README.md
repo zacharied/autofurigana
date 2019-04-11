@@ -23,7 +23,7 @@ and array of kanji-kana pairs; if the currently analyzed block of the kanji
 sentence has kana in it, the kana slot of the pair is set to `null`.
 
 The first argument to the function is the sentence containing kanji, and the
-second is the same sentence with only kana. An example feat. Murakami:
+second is the same sentence with only kana. An example:
 
 ```
 console.log(autofurigana(
@@ -44,7 +44,9 @@ console.log(autofurigana(
 ## Testing
 
 Run the `test` script. You may edit `test.js` with sentences of your own if
-you so desire; it should be simple enough to understand what's going on.
+you so desire; it should be simple enough to understand what's going on. Note 
+that a recent version of `node` (recent enough to support the 
+`--experimental-modules` flag) is needed to run the tests.
 
 ## Other notes
 
