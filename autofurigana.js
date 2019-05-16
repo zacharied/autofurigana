@@ -42,7 +42,7 @@ const autofurigana = (kanji, reading) => {
       break;
     } else if (is_kanji(kanji[kp]) && !is_kanji(kanji[kp+1])) {
       // We need to "catch up" reading to kanji.
-      while (kanji[kp+1] !== reading[rp]) {
+      while (kanji[kp+1] !== reading[rp] || read_build.length < kanji_build.length) {
         if (reading[rp] === undefined) {
           // We reached the end of the string without finding a match.
           return null;

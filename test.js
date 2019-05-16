@@ -14,3 +14,9 @@ console.log(autofurigana(
   '走ることについて語るときに僕の語ること',
   'はしることについてかたるときにぼくのかたること'
 ));
+
+// String that could confuse the function.
+console.log(autofurigana(
+  '息抜き',
+  'いきぬき'
+));
