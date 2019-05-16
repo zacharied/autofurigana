@@ -1,6 +1,6 @@
 // Returns true if every character in the string is a kanji.
 const is_kanji = (c) => {
-  return /[\u4E00-\u9FEF]/.test(c);
+  return /[\u3000-\u303F\u4E00-\u9FEF]/.test(c);
 };
 
 const autofurigana = (kanji, reading) => {

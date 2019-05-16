@@ -80,5 +80,12 @@ test(
   [ [ '息抜', 'いきぬ' ], [ 'き', null ] ]
 );
 
+test(
+  'Special characters in kanji',
+  '時々',
+  'ときどき',
+  [ [ '時々', 'ときどき' ] ]
+);
+
 console.log(test.ct_pass + ' tests passed.');
 console.log(test.ct_fail + ' tests failed.');
