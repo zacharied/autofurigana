@@ -6,7 +6,7 @@ cd "$temp"
 cp ../*.js .
 for f in *.js; do mv "$f" "${f%.js}.mjs"; done
 
-node --experimental-modules 'test.mjs'
+node --experimental-modules 'test.mjs' 2> >(grep -v '^(node:[[:digit:]]*) ExperimentalWarning: The ESM module loader is experimental.' >&2)
 
 cd ..
 rm -rf "$temp"
