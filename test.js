@@ -20,3 +20,9 @@ console.log(autofurigana(
   '息抜き',
   'いきぬき'
 ));
+
+// Invalid input.
+console.log(autofurigana(
+  '一直線に',
+  'いっちょくせん'
+));
