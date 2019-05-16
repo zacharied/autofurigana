@@ -4,7 +4,7 @@ temp=$(mktemp -dp . "_test.XXXXX")
 
 cd "$temp"
 cp ../*.js .
-rename '.js' '.mjs' *
+for f in *.js; do mv "$f" "${f%.js}.mjs"; done
 
 node --experimental-modules 'test.mjs'
 
