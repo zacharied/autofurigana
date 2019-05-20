@@ -62,4 +62,18 @@ const autofurigana = (kanji, reading) => {
   return pairs;
 };
 
-export { autofurigana };
+const autofurigana_brackets = (kanji, kana) => {
+  let pairs = autofurigana(kanji, kana);
+  let str = '';
+  for (let i = 0; i < pairs.length; i++)
+    if (pairs[i][1] !== null) {
+      if (i != 0)
+        str += ' ';
+      str += pairs[i][0] + '[' + pairs[i][1] + ']';
+    } else
+      str += pairs[i][0];
+
+  return str;
+}
+
+export { autofurigana, autofurigana_brackets };

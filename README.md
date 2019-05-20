@@ -43,6 +43,17 @@ console.log(autofurigana(
 >   [ 'ること', null ] ]
 ```
 
+There is also the function `autofurigana_brackets` which instead outputs in the commonly accepted bracket-notation furigana format, in which characters placed within square brackets are considered to be furi for the preceding characters until the previous space. Using the previous example,
+
+```
+console.log(autofurigana_brackets(
+  '走ることについて語るときに僕の語ること',
+  'はしることについてかたるときにぼくのかたること'
+));
+
+> "走[はし]ることについて 語[かた]るときに 僕[ぼく]の 語[かた]ること"
+```
+
 ## Testing
 
 Run the `test` script. You may edit `test.js` with sentences of your own if
