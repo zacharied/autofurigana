@@ -17,8 +17,10 @@ be considered complete.
 
 ## Usage
 
-You can import it like a normal node module or just paste the contents of
-`autofurigana.min.js` into your file.
+The main `autofurigana.js` file exports the necessary functions. There is also
+the `autofurigana.min.js` file, which is minified and has module system code
+taken out such that it is ready to be copy-pasted and called within existing JS
+code.
 
 The function itself returns an array of kanji-kana pairs; if the currently
 analyzed block of the kanji sentence has kana in it, the kana slot of the pair
@@ -43,7 +45,10 @@ console.log(autofurigana(
 >   [ 'ること', null ] ]
 ```
 
-There is also the function `autofurigana_brackets` which instead outputs in the commonly accepted bracket-notation furigana format, in which characters placed within square brackets are considered to be furi for the preceding characters until the previous space. Using the previous example,
+There is also the function `autofurigana_brackets` which instead outputs in the
+commonly accepted bracket-notation furigana format, in which characters placed
+within square brackets are considered to be furi for the preceding characters
+until the previous space. Using the previous example,
 
 ```
 console.log(autofurigana_brackets(
@@ -56,10 +61,8 @@ console.log(autofurigana_brackets(
 
 ## Testing
 
-Run the `test` script. You may edit `test.js` with sentences of your own if
-you so desire; it should be simple enough to understand what's going on. Note 
-that a recent version of `node` (recent enough to support the 
-`--experimental-modules` flag) is needed to run the tests.
+After ensuring that your system has NodeJS installed, simply run `make test`
+and the unit tests will be run.
 
 ## Other notes
 

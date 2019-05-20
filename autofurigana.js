@@ -1,9 +1,8 @@
-// Returns true if every character in the string is a kanji.
-const is_kanji = (c) => {
-  return /[\u3000-\u303F\u4E00-\u9FEF]/.test(c);
-};
+module.exports.autofurigana = function(kanji, reading) {
+  const is_kanji = (c) => {
+    return /[\u3000-\u303F\u4E00-\u9FEF]/.test(c);
+  };
 
-const autofurigana = (kanji, reading) => {
   // Groups kanji or kanji groups to groups of phonetics. If key is null,
   // then the "kanji" and phonetics line up.
   let pairs = []; 
@@ -62,7 +61,7 @@ const autofurigana = (kanji, reading) => {
   return pairs;
 };
 
-const autofurigana_brackets = (kanji, kana) => {
+module.exports.autofurigana_brackets = function(kanji, kana) {
   let pairs = autofurigana(kanji, kana);
   let str = '';
   for (let i = 0; i < pairs.length; i++)
@@ -74,6 +73,4 @@ const autofurigana_brackets = (kanji, kana) => {
       str += pairs[i][0];
 
   return str;
-}
-
-export { autofurigana, autofurigana_brackets };
+};

@@ -7,6 +7,11 @@ clean:
 	rm $(LIBFILE_MIN)
 
 minify:
-	curl -X POST -s --data-urlencode 'input@$(LIBFILE)' https://javascript-minifier.com/raw > $(LIBFILE_MIN)
+	sed 's/^module\.exports\.//' "$(LIBFILE)" > "$(LIBFILE).temp"
+	curl -X POST -s --data-urlencode 'input@$(LIBFILE).temp' https://javascript-minifier.com/raw > "$(LIBFILE_MIN)"
+	rm "$(LIBFILE).temp"
 
-.PHONY: all
+test:
+	node test.js
+
+.PHONY: all test

@@ -1,4 +1,4 @@
-import { autofurigana } from './autofurigana';
+const af = require('./autofurigana');
 
 Array.prototype.equals = function(array) {
   if (!array)
@@ -26,7 +26,7 @@ const test = (desc, kanji, kana, out) => {
     test.ct_fail = 0;
 
   process.stdout.write("Test: " + desc + "... ");
-  let res = autofurigana(kanji, kana);
+  let res = af.autofurigana(kanji, kana);
   if (res.equals(out)) {
     process.stdout.write("PASS\n");
     test.ct_pass++;
