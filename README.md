@@ -17,10 +17,12 @@ be considered complete.
 
 ## Usage
 
-`import { autofurigana } from './autofurigana'` or something will bring the
-`autofurigana` function into the local namespace. The function itself returns
-and array of kanji-kana pairs; if the currently analyzed block of the kanji
-sentence has kana in it, the kana slot of the pair is set to `null`.
+You can import it like a normal node module or just paste the contents of
+`autofurigana.min.js` into your file.
+
+The function itself returns and array of kanji-kana pairs; if the currently
+analyzed block of the kanji sentence has kana in it, the kana slot of the pair
+is set to `null`.
 
 The first argument to the function is the sentence containing kanji, and the
 second is the same sentence with only kana. An example:
